@@ -6,9 +6,9 @@ import { AppComponent } from './app.component';
 import { HomePageComponent } from './componentes/home-page/home-page.component';
 import { NavbarComponent } from './componentes/navbar/navbar.component';
 import { LoginPageComponent } from './componentes/login-page/login-page.component';
-import { NotFounPageComponent } from './componentes/not-foun-page/not-foun-page.component';
 import { CrudPageComponent } from './componentes/crud-page/crud-page.component';
-import { NotFoundPageComponent } from './componentes/not-found-page/not-found-page.component';
+import { NoFoundPageComponent } from './componentes/no-found-page/no-found-page.component';
+
 
 @NgModule({
   declarations: [
@@ -16,9 +16,8 @@ import { NotFoundPageComponent } from './componentes/not-found-page/not-found-pa
     HomePageComponent,
     NavbarComponent,
     LoginPageComponent,
-    NotFounPageComponent,
     CrudPageComponent,
-    NotFoundPageComponent
+    NoFoundPageComponent,
   ],
   imports: [
     BrowserModule,
