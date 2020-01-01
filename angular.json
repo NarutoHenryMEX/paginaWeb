@@ -28,7 +28,7 @@
               "src/assets"
             ],
             "styles": [
-              "node_modules/bootswatch/dist/solar/bootstrap.css",
+              "node_modules/bootswatch/dist/journal/bootstrap.css",
               "node_modules/font-awesome/css/font-awesome.css",
               "src/styles.scss"
             ],

@@ -7,7 +7,7 @@ import { NoFoundPageComponent } from './componentes/no-found-page/no-found-page.
 
 const routes: Routes = [
 {path: '', component: HomePageComponent},
-{path: 'loginx', component: LoginPageComponent},
+{path: 'login', component: LoginPageComponent},
 {path: 'crud', component: CrudPageComponent},
 {path: '**', component: NoFoundPageComponent}
 
