@@ -23,6 +23,7 @@ public pass: string;
     
   }
 
+    
   onSubmitLoginUser(){
     this.authService.loginUser(this.email, this.pass)
     .then((res) => {
@@ -35,6 +36,25 @@ public pass: string;
       this.router.navigate(['/crud']);
       
     });
+  }
+
+  //Metodo cando se da click en boton oculto de Google
+  onClickGoogleLogin(){
+    this.authService.loginGoogle()
+    .then((res) => {
+     this.mensajeFlash.show('Inicio de Sesión Correcto', 
+     {cssClass:'alert-success', timeout: 4000}); 
+     this.router.navigate(['/crud']);
+    }).catch((err) => {
+      this.mensajeFlash.show('No se puede iniciar sesión, asegure que su cuenta sea correcta o comuniquese con el administrador del sistema', 
+      {cssClass:'alert-danger', timeout: 6000}); 
+      this.router.navigate(['/crud']);
+    });
+  }
+
+  //Metodo cando se da click en boton oculto de Google
+  onClickFacebookLogin(){
+    console.log('Facebook');
   }
   
   

@@ -15,10 +15,27 @@
               <label for="password">Contraseña</label>
               <input [(ngModel)]="pass" name="pass" type="password" class="form-control" id="pass" placeholder="Escriba su Contraseña">
             </div>    
-            <input type="submit" value="Aceptar" class="btn btn-primary btn-block btn-lg">
+            <input type="submit" value="Entrar" class="btn btn-primary btn-block btn-lg">
           </fieldset>
+        
         </form>
       </div>
     </div>
   </div>
 </div>
+
+<!-- Botones de inicio de sesión con Google y Facebook
+<div class="row">
+  <div class="col-md-6 mx-auto mt-2">
+    <div class="card">
+      <legend class="text-center mt-2">Iniciar sesión con Red Social</legend>
+      <div class="card-body d-flex justify-content-around">
+        
+          <button type="submit" (click)="onClickGoogleLogin()" value="Google" class="btn btn-google fa fa-google btn-lg">  Google</button>
+          <button type="submit" (click)="onClickFacebookLogin()" value="Facebook" class="btn btn-facebook btn-lg fa fa-facebook-f">  Facebook</button>
+    
+      </div>
+    </div>
+  </div>
+</div>
+-->

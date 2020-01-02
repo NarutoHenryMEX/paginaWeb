@@ -25,11 +25,8 @@
           <a class="nav-link">{{nombreUsuario}}</a>
       </li>
       <li class="nav-item" *ngIf="activo">
-        <a class="nav-link">{{emailUsuario}}</a>
-    </li>
-      <li class="nav-item" *ngIf="activo">
         <img src="{{fotoUsuario}}" class="rounded-circle">
-        <span class="badge pill secundary">{{fotoUsuario}}</span>
+        <span class="badge pill badge-success">{{emailUsuario}}</span>
     </li>
     </ul>
   </div>

@@ -35,4 +35,14 @@ export class AuthService {
     return this.afAuth.auth.signOut();
   }
 
+  //Inicia sesión en Google
+  loginGoogle(){
+    return this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
+  }
+
+    //Inicia sesión en Facebook
+  loginFacebook(){
+    return this.afAuth.auth.signInWithPopup(new firebase.auth.FacebookAuthProvider());
+  }
+
 }

@@ -32,6 +32,7 @@ public fotoUsuario: string;
 
   onClickLogout(){
     this.authService.logout();
+    this.authService.logout().finally;
   }
 
 }
