@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {AngularFireAuth} from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
-import { map } from "rxjs/operators/";
+import 'rxjs/add/operator/map';
 
 
 
@@ -27,7 +27,7 @@ export class AuthService {
   //Metodo para que nos devuelva los datos del usuario logeado
   getAuth(){
    
-    return this.afAuth.authState.pipe(map(auth => auth));
+    return this.afAuth.authState.map(auth => auth);
   }
 
   //Metodo pasa salir
