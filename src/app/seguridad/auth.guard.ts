@@ -19,7 +19,7 @@ constructor(
   private authService: AuthService
 ){}
 
-  canActivate(
+  canActivate( //canActivate será la parte que se agrega en las rutas
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean>| boolean {
     return this.authService.afAuth.authState
@@ -27,8 +27,8 @@ constructor(
     .take(1)
     .map(authState => !! authState)
     .do (authenticated =>{
-      if (!authenticated){
-        this.router.navigate(['/login']);
+      if (!authenticated){ //Si el usuario no esta autenticado..
+        this.router.navigate(['/login']); //Lo redireccionamos a una pagina en especifico
       }
     });
   }
