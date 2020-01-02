@@ -10,6 +10,7 @@ export class NavbarComponent implements OnInit {
 public activo: boolean;
 public nombreUsuario: string;
 public emailUsuario: string;
+public fotoUsuario: string;
 
   constructor(
     public authService: AuthService
@@ -22,6 +23,7 @@ public emailUsuario: string;
         this.activo = true; //es verdadero
         this.nombreUsuario = auth.displayName; //Desplejar su nombre
         this.emailUsuario = auth.email; //y desplejar su correo
+        this.fotoUsuario = auth.photoURL;
       } else { //Si no, entonces
         this.activo = false; //devolver un falso
       }
