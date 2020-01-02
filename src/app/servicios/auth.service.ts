@@ -31,7 +31,7 @@ export class AuthService {
   }
 
   //Metodo pasa salir
-  logout(email: string, pass){ 
+  logout(){ 
     return this.afAuth.auth.signOut();
   }
 
