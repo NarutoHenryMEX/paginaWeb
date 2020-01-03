@@ -12,20 +12,23 @@ export class DataApiService {
 
   constructor(private afs: AngularFirestore){
     
-    this.listadoInmueble = afs.collection<inmueblesInterface>('inmuebles');
-    this.inmubles = this.listadoInmueble.valueChanges();
+    this.listadoInmuebles = afs.collection<inmueblesInterface>('inmuebles');
+    this.inmuebles = this.listadoInmuebles.valueChanges();
   }
-  private listadoInmueble: AngularFirestoreCollection<inmueblesInterface>;
-  private inmubles: Observable<inmueblesInterface[]>;
+  private listadoInmuebles: AngularFirestoreCollection<inmueblesInterface>;
+  private inmuebles: Observable<inmueblesInterface[]>;
   private inmuebleDoc: AngularFirestoreDocument<inmueblesInterface>;
   private inmueble: Observable<inmueblesInterface>;
 
   //Metodos principales del CRUD
 
-  createInmuble(){}
+  createInmueble(inmueble: inmueblesInterface): void {
+    this.listadoInmuebles.add(inmueble);
+    }
 
-  readAllInmuble(){
-    return this.inmubles = this.listadoInmueble.snapshotChanges()
+   //Metodo para traer TODOS los inmuebles
+  readAllInmuebles(){
+    return this.inmuebles = this.listadoInmuebles.snapshotChanges()
     .pipe(map(changes => {
       return changes.map(action =>{
         const data = action.payload.doc.data() as inmueblesInterface;
@@ -35,6 +38,7 @@ export class DataApiService {
     }));
   }
 
+  //Metodo para traer un solo inmueble
 readOneInmueble(idInmueble:string){ //Recibe el id del inmueble a mostrar
 this.inmuebleDoc = this.afs.doc<inmueblesInterface>(`inmuebles/${idInmueble}`); //Va a la conexion de inmuebles y busca el id filtrado
 return this.inmueble = this.inmuebleDoc.snapshotChanges().pipe(map(action =>{ //Devuelve el lnmueble
@@ -48,9 +52,18 @@ return this.inmueble = this.inmuebleDoc.snapshotChanges().pipe(map(action =>{ //
 }));
 }
 
-  updateInmubele(){}
+  //Metodo para modificar un inmueble por su id existente
+  updateInmueble(inmueble: inmueblesInterface): void {
+    let idInmueble = inmueble.id;
+    this.inmuebleDoc = this.afs.doc<inmueblesInterface>(`inmueble/${idInmueble}`);
+    this.inmuebleDoc.update(inmueble);
+  }
 
-  deleteInmuble(){}
+  //Metodo para eliminar el inmueble por su id
+  deleteInmueble(idInmueble: string): void {
+    this.inmuebleDoc = this.afs.doc<inmueblesInterface>(`inmueble/${idInmueble}`);
+    this.inmuebleDoc.delete();
+  }
 
 
 }

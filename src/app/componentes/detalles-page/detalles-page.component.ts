@@ -15,7 +15,7 @@ export class DetallesPageComponent implements OnInit {
   public inmueble = '';
   
   ngOnInit() { 
-  this.dataApi.readAllInmuble().subscribe( inmuebles=> {
+  this.dataApi.readAllInmuebles().subscribe( inmuebles=> {
       console.log('INMUEBLES', inmuebles);
       this.inmuebles = inmuebles;
     }

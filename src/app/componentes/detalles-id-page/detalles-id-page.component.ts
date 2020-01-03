@@ -14,15 +14,15 @@ export class DetallesIdPageComponent implements OnInit {
   public inmueble: inmueblesInterface = {};
 
   ngOnInit(){
-    const idInmueble = this.route.snapshot.params['id'];
+    const idInmueble = this.route.snapshot.params['id']; //Extrae los parametros, id en especifico
     this.ReadDetalle(idInmueble);
   }
 
-  ReadDetalle(idInmueble){
+  ReadDetalle(idInmueble: string): void {
     
     this.dataApi.readOneInmueble(idInmueble).subscribe(inmueble =>{
      this.inmueble = inmueble;
     });
-  }
+  } 
 
 }

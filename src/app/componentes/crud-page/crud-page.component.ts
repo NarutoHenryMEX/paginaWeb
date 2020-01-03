@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { DataApiService } from '../../servicios/data-api.service';
+import { DataApiService } from '../../servicios/data-api.service';7
+import { inmueblesInterface } from '../../models/inmuebles';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-crud-page',
@@ -9,16 +11,25 @@ import { DataApiService } from '../../servicios/data-api.service';
 export class CrudPageComponent implements OnInit {
 
   constructor(private dataApi: DataApiService) { }
-  public inmuebles = [];
-  public inmueble = '';
+  private inmuebles: inmueblesInterface [];
+  
+
 
   ngOnInit() {
-  this.dataApi.readAllInmuble().subscribe(
-    inmuebles=> {
-      console.log('INMUEBLES', inmuebles);
-      this.inmuebles = inmuebles;
-    }
-  )
+   this.traerListaInmuebles();
   }
 
-}
+  traerListaInmuebles(){
+    this.dataApi.readAllInmuebles().subscribe(inmuebles =>{
+      this.inmuebles = inmuebles;
+      console.log(inmuebles);
+    });
+  }
+
+  borrarUnLibro(){
+    console.log('Borrado');
+  }
+
+  }
+
+

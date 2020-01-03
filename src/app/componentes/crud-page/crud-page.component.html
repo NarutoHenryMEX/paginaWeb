@@ -1,10 +1,20 @@
-<div class="jumbotron">
-  <h1 class="display-3">Página del CRUD</h1>
-  <p class="lead">Esta página estará pendiente, pero será el atractivo principal </p>
-  <hr class="my-4">
-  <p>Posiblemente acá existan cuadros, fotos, precios, lo que el cliente quiera
-  </p>
-  <p class="lead">
-    <a class="btn btn-primary btn-lg" href="#" role="button">Otra página divertida acá</a>
-  </p>
-</div>
+<section class="row mt-5">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Cuadrante</th>
+        <th scope="col">Zona</th>
+        <th scope="col">Imagen</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let inmueble of inmuebles" >
+        <th scope="row">{{inmueble.id}}</th>
+        <td>{{inmueble.zona}}</td>
+        <td>{{inmueble.cuadrante}}</td>
+        <td ><img src="{{inmueble.portada}}" class="img-fluid"></td>
+      </tr>
+    </tbody>
+  </table> 
+</section>
