@@ -16,6 +16,7 @@ export class HomePageComponent implements OnInit {
   this.dataApi.readAllInmuble().subscribe(
     inmuebles=> {
       console.log('INMUEBLES', inmuebles);
+      this.inmuebles = inmuebles;
     }
   )
   }
