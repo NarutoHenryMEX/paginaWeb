@@ -7,14 +7,17 @@ import { NoFoundPageComponent } from './componentes/no-found-page/no-found-page.
 import {AuthGuard} from './seguridad/auth.guard';
 import { OfertaPageComponent } from './componentes/oferta-page/oferta-page.component';
 import { DetallesPageComponent } from './componentes/detalles-page/detalles-page.component';
+import {DetallesIdPageComponent} from './componentes/detalles-id-page/detalles-id-page.component';
 
 const routes: Routes = [
 {path: '', component: HomePageComponent},
 {path: 'login', component: LoginPageComponent},
 {path: 'crud', component: CrudPageComponent, canActivate:[AuthGuard]},
 {path: 'ofertas', component: OfertaPageComponent},
-{path: 'detalles/id', component: DetallesPageComponent},
-{path: '**', component: NoFoundPageComponent}
+{path: 'detalles', component: DetallesPageComponent},
+{path: 'detalles/:id', component: DetallesIdPageComponent},
+{path: '**', component: NoFoundPageComponent},
+
 ];
 
 @NgModule({

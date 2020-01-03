@@ -9,16 +9,10 @@ import { DataApiService } from '../../servicios/data-api.service';
 export class HomePageComponent implements OnInit {
 
   constructor(private dataApi: DataApiService) { }
-  public inmuebles = [];
-  public inmueble = '';
+
 
   ngOnInit() {
-  this.dataApi.readAllInmuble().subscribe(
-    inmuebles=> {
-      console.log('INMUEBLES', inmuebles);
-      this.inmuebles = inmuebles;
-    }
-  )
+
   }
 
 }

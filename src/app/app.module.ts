@@ -25,6 +25,8 @@ import { DetallesPageComponent } from './componentes/detalles-page/detalles-page
 import {AngularFireStorageModule} from '@angular/fire/storage';
 import {AngularFirestore} from '@angular/fire/firestore';
 
+import { DetallesIdPageComponent } from './componentes/detalles-id-page/detalles-id-page.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +36,8 @@ import {AngularFirestore} from '@angular/fire/firestore';
     CrudPageComponent,
     NoFoundPageComponent,
     DetallesPageComponent,
-    OfertaPageComponent
+    OfertaPageComponent,
+    DetallesIdPageComponent
   ],
   imports: [
     BrowserModule,
