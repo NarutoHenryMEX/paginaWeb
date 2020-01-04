@@ -7,7 +7,6 @@ import { DataApiService } from '../../servicios/data-api.service';
   styleUrls: ['./home-page.component.scss']
 })
 export class HomePageComponent implements OnInit {
-
   constructor(private dataApi: DataApiService) { }
 
 
