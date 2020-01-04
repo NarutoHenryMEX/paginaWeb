@@ -26,6 +26,7 @@ import {AngularFireStorageModule} from '@angular/fire/storage';
 import {AngularFirestore} from '@angular/fire/firestore';
 
 import { DetallesIdPageComponent } from './componentes/detalles-id-page/detalles-id-page.component';
+import { VentanaEmergenteComponent } from './componentes/ventana-emergente/ventana-emergente.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { DetallesIdPageComponent } from './componentes/detalles-id-page/detalles
     NoFoundPageComponent,
     DetallesPageComponent,
     OfertaPageComponent,
-    DetallesIdPageComponent
+    DetallesIdPageComponent,
+    VentanaEmergenteComponent
   ],
   imports: [
     BrowserModule,

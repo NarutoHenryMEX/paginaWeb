@@ -1,20 +1,67 @@
+
 <section class="row mt-5">
-  <table class="table table-hover">
-    <thead>
-      <tr>
-        <th scope="col">ID</th>
-        <th scope="col">Cuadrante</th>
-        <th scope="col">Zona</th>
-        <th scope="col">Imagen</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let inmueble of inmuebles" >
-        <th scope="row">{{inmueble.id}}</th>
-        <td>{{inmueble.zona}}</td>
-        <td>{{inmueble.cuadrante}}</td>
-        <td ><img src="{{inmueble.portada}}" class="img-fluid"></td>
-      </tr>
-    </tbody>
-  </table> 
+  <div class="col">
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalButton">
+      Boton fuera
+    </button>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Cuadrante</th>
+          <th scope="col">Zona</th>
+          <th scope="col">Imagen</th>
+          <th scope="col">&nbsp;</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let inmueble of inmuebles" >
+          <th scope="row">{{inmueble.id}}</th>
+          <td>{{inmueble.zona}}</td>
+          <td>{{inmueble.cuadrante}}</td>
+          <td ><img src="{{inmueble.portada}}" class="img-fluid"></td>
+          <td>
+            
+              <a class="nav-link dropdown-toggle float-right" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Más opciones</a>
+              <div class="dropdown-menu" style="">
+                <a class="dropdown-item" href="#">Ver más detalles</a>
+                <a class="dropdown-item" href="#">Modificar</a>
+                <a class="dropdown-item" href="#">Eliminar</a>
+              </div>
+           
+          </td>
+        </tr>
+      </tbody>
+    </table> 
+  </div>
 </section>
+
+
+<div class="modal fade" id="modalButton" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Recipient:</label>
+            <input type="text" class="form-control" id="recipient-name">
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">Message:</label>
+            <textarea class="form-control" id="message-text"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Send message</button>
+      </div>
+    </div>
+  </div>
+</div>
