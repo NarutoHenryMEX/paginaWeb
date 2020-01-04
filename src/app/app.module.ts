@@ -27,6 +27,8 @@ import {AngularFirestore} from '@angular/fire/firestore';
 
 import { DetallesIdPageComponent } from './componentes/detalles-id-page/detalles-id-page.component';
 import { VentanaEmergenteComponent } from './componentes/ventana-emergente/ventana-emergente.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './material.module';
 
 @NgModule({
   declarations: [
@@ -48,7 +50,9 @@ import { VentanaEmergenteComponent } from './componentes/ventana-emergente/venta
     AngularFireAuthModule,
     AngularFireStorageModule,
     AngularFireModule.initializeApp(environment.firebaseConfing),
-    FlashMessagesModule
+    FlashMessagesModule,
+    BrowserAnimationsModule,
+    MaterialModule
   ],
   providers: [AuthService, AuthGuard, FlashMessagesService, AngularFirestore],
   bootstrap: [AppComponent]
