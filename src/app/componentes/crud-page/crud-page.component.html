@@ -19,14 +19,16 @@
           <td>{{inmueble.zona}}</td>
           <td ><img src="{{inmueble.portada}}" class="img-fluid"></td>
           <td>
-            
+            <button type="button" (click)="borrarUnLibro(inmueble.id)" class="btn btn-primary">Borrar</button>
+              
+            <!--
               <a class="nav-link dropdown-toggle float-right" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Más opciones</a>
               <div class="dropdown-menu" style="">
                 <a class="dropdown-item" href="#">Ver más detalles</a>
                 <a class="dropdown-item" href="#">Modificar</a>
-                <a class="dropdown-item" href="#">Eliminar</a>
+                <a class="dropdown-item" (click)="borrarUnLibro(inmueble.id)">Eliminar</a>
               </div>
-           
+            -->
           </td>
         </tr>
       </tbody>

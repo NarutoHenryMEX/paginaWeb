@@ -15,9 +15,9 @@ export class ModalComponent implements OnInit {
   ngOnInit() {
   }
 
-  guardarInmueble(Inmuebleform: NgForm):void{
+  guardarInmueble(inmuebleForm: NgForm):void{
     //Guardar
-    this.dataApi.createInmueble(Inmuebleform.value);
+    this.dataApi.createInmueble(inmuebleForm.value);
 
     //Modificar
   }

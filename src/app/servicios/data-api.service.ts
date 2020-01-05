@@ -56,13 +56,13 @@ return this.inmueble = this.inmuebleDoc.snapshotChanges().pipe(map(action =>{ //
   //Metodo para modificar un inmueble por su id existente
   updateInmueble(inmueble: inmueblesInterface): void {
     let idInmueble = inmueble.id;
-    this.inmuebleDoc = this.afs.doc<inmueblesInterface>(`inmueble/${idInmueble}`);
+    this.inmuebleDoc = this.afs.doc<inmueblesInterface>(`inmuebles/${idInmueble}`);
     this.inmuebleDoc.update(inmueble);
   }
 
   //Metodo para eliminar el inmueble por su id
   deleteInmueble(idInmueble: string): void {
-    this.inmuebleDoc = this.afs.doc<inmueblesInterface>(`inmueble/${idInmueble}`);
+    this.inmuebleDoc = this.afs.doc<inmueblesInterface>(`inmuebles/${idInmueble}`);
     this.inmuebleDoc.delete();
   }
 

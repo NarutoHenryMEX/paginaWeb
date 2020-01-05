@@ -26,8 +26,13 @@ export class CrudPageComponent implements OnInit {
     });
   }
 
-  borrarUnLibro(){
-    console.log('Borrado');
+  borrarUnLibro(idInmueble: string){
+    const confirmacion = confirm("Seguro que desea eliminar este registro");
+    if(confirmacion){
+      this.dataApi.deleteInmueble(idInmueble);
+    }
+
+    
   }
 
   }
