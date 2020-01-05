@@ -19,6 +19,7 @@ export class DataApiService {
   private inmuebles: Observable<inmueblesInterface[]>;
   private inmuebleDoc: AngularFirestoreDocument<inmueblesInterface>;
   private inmueble: Observable<inmueblesInterface>;
+  public seleccionarInmueble: inmueblesInterface[];
 
   //Metodos principales del CRUD
 

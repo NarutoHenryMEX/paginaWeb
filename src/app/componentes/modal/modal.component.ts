@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {DataApiService} from '../../servicios/data-api.service';
+import {inmueblesInterface} from '../../models/inmuebles';
+import {NgForm} from '@angular/forms';
 
 @Component({
   selector: 'app-modal',
@@ -7,9 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ModalComponent implements OnInit {
 
-  constructor() { }
+  constructor(private dataApi:DataApiService) { }
 
   ngOnInit() {
+  }
+
+  guardarInmueble(Inmuebleform: NgForm):void{
+    //Guardar
+    this.dataApi.createInmueble(Inmuebleform.value);
+
+    //Modificar
   }
 
 }
