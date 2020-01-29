@@ -5,14 +5,14 @@
 export const environment = {
   production: false,
   firebaseConfing:{
-    apiKey: "AIzaSyC2qhtk2sDW_UbkXJaOmb8zbgRDMyvVuuo",
-    authDomain: "inmobiliaria-f3d75.firebaseapp.com",
-    databaseURL: "https://inmobiliaria-f3d75.firebaseio.com",
-    projectId: "inmobiliaria-f3d75",
-    storageBucket: "inmobiliaria-f3d75.appspot.com",
-    messagingSenderId: "669063688110",
-    appId: "1:669063688110:web:6313386f579fe474f7623f",
-    measurementId: "G-5KH15SEQKL"
+    apiKey: "AIzaSyAFfcHJrZFMnJC3txD8znTn7l09zFH7GKw",
+    authDomain: "bdavaluos.firebaseapp.com",
+    databaseURL: "https://bdavaluos.firebaseio.com",
+    projectId: "bdavaluos",
+    storageBucket: "bdavaluos.appspot.com",
+    messagingSenderId: "780973362745",
+    appId: "1:780973362745:web:ab33b25d13da45e76d47e8",
+    measurementId: "G-GHY3D3EDZS"
   }
 };
 
