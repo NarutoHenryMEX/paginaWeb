@@ -21,24 +21,14 @@
 
           <div class="form-row">
             <div class="form-group col-md-6">
-              <label for="cuadrante">Cuadrante</label>
-              <select class="form-control" name="cuadrante" (ngModel)="this.dataApi.seleccionarInmueble.cuadrante">
-                <option value="I">I</option>
-                <option value="II">II</option>
-                <option value="III">III</option>
-                <option value="IV">IV</option>
+              <label for="zona">Zona</label>
+              <select class="form-control" name="zona" (ngModel)="this.dataApi.seleccionarInmueble.zona">
+                <option value="I-Noroeste">I</option>
+                <option value="II-Noreste">II</option>
+                <option value="III-Suroeste">III</option>
+                <option value="IV-Sureste">IV</option>
               </select>
             </div>
-            
-          <div class="form-group col-md-6">
-            <label for="Zona">Zona</label>
-            <select class="form-control" name="zona" (ngModel)="this.dataApi.seleccionarInmueble.zona">
-              <option value="NORTE">NORTE</option>
-              <option value="SUR">SUR</option>
-              <option value="ESTE">ESTE</option>
-              <option value="OESTE">OESTE</option>
-            </select>
-          </div>
             
           </div>
 
