@@ -1,50 +1,145 @@
 <button type="button" class="btn btn-primary float-right" data-backdrop="static" data-toggle="modal" data-target="#modal1">Agregar Nuevo</button>
 
 <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
+  <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" >Registro</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+        <h1 class="modal-title" >Registro Inmueble</h1>
       </div>
       <div class="modal-body">
 
-
         <form name="formInmueble" #formInmueble="ngForm" (ngSubmit)="guardarInmueble(formInmueble)">
-
           <div class="form-row">
             <div class="form-group col-md-6">
               <label for="by">Modificado por</label>
-              <select class="form-control" name="by" (ngModel)="this.dataApi.seleccionarInmueble.by" required > 
+              <select class="form-control" name="by" (ngModel)="this.dataApi.seleccionarInmueble.by" > 
                 <option value="{{by}}">{{by}}</option>
               </select>
             </div>
           </div>
 
-          <div class="form-group">
-            <label for="idp">ID</label>
-            <input type="text" class="form-control" name="idp" (ngModel)="this.dataApi.seleccionarInmueble.idp">
-          </div>
 
+<!--Campos para Ubicación-->
+
+          <br>
+          <h2>Ubicación</h2>
           <div class="form-row">
+
+            <div class="form-group col-md-3">
+              <label for="idp">ID</label>
+              <input type="text" class="form-control" name="idp" (ngModel)="this.dataApi.seleccionarInmueble.idp">
+            </div>
+  
+              <div class="form-group col-md-3">
+                <label for="zona">Zona</label>
+                <select class="form-control" name="zona" (ngModel)="this.dataApi.seleccionarInmueble.zona" > 
+                  <option value="I-Noroeste">I</option>
+                  <option value="II-Noreste">II</option>
+                  <option value="III-Suroeste">III</option>
+                  <option value="IV-Sureste">IV</option>
+                </select>
+              </div>
+
+              <div class="form-group col-md-6">
+                <label for="portada">Link de la Imagen</label>
+                <input type="text" class="form-control" name="portada" (ngModel)="this.dataApi.seleccionarInmueble.portada">
+              </div>
+          </div>
+<!--Campos para Dirección-->
+          <br>
+          <h2>Dirección</h2>
+          <div class="form-row">
+            
             <div class="form-group col-md-6">
-              <label for="zona">Zona</label>
-              <select class="form-control" name="zona" (ngModel)="this.dataApi.seleccionarInmueble.zona" > 
-                <option value="I-Noroeste">I</option>
-                <option value="II-Noreste">II</option>
-                <option value="III-Suroeste">III</option>
-                <option value="IV-Sureste">IV</option>
-              </select>
+              <label for="calle">Calle</label>
+              <input type="text" class="form-control" name="calle" (ngModel)="this.dataApi.seleccionarInmueble.calle">
+            </div>
+
+            <div class="form-group col-md-2">
+              <label for="nInterior">N° Int</label>
+              <input type="text" class="form-control" name="nInterior" (ngModel)="this.dataApi.seleccionarInmueble.nInterior">
+            </div>
+
+            <div class="form-group col-md-2">
+              <label for="nExterior">N° Ext</label>
+              <input type="text" class="form-control" name="nExterior" (ngModel)="this.dataApi.seleccionarInmueble.nExterior">
+            </div>
+
+            <div class="form-group col-md-2">
+              <label for="codigoPostal">Código Postal</label>
+              <input type="text" class="form-control" name="codigoPostal" (ngModel)="this.dataApi.seleccionarInmueble.codigoPostal">
+            </div>
+
+          </div>
+          <div class="form-row">
+
+            <div class="form-group col-md-3">
+              <input type="text" class="form-control" name="entreCalle1" placeholder="Entre calle" (ngModel)="this.dataApi.seleccionarInmueble.entreCalle1"> 
+            </div>
+          
+            <div class="form-group col-md-3">
+              <input type="text" class="form-control" name="entreCalle2" placeholder="y calle" (ngModel)="this.dataApi.seleccionarInmueble.entreCalle2">
+            </div>
+
+            <div class="form-group col-md-6 " >
+              <input type="text" class="form-control" name="referencia" placeholder="Referencia" (ngModel)="this.dataApi.seleccionarInmueble.referencia">
             </div>
             
           </div>
 
-          <div class="form-group">
-            <label for="portada">Link de la Imagen</label>
-            <input type="text" class="form-control" name="portada" (ngModel)="this.dataApi.seleccionarInmueble.portada">
+<!--Campos para Descripción Inmuebles-->
+          <br>
+          <h2>Descripción del Inmueble</h2>
+          <div class="form-row">
+
+            <div class="form-group col-md-4">
+              <label for="nNiveles" >Número de Niveles</label>
+              <input type="number" class="form-control" name="nNiveles" (ngModel)="this.dataApi.seleccionarInmueble.nNiveles">
+            </div>
+
+            <div class="form-group col-md-4">
+              <label for="nNiveles" >Número de Recamaras</label>
+              <input type="number" class="form-control" name="nRecamaras" (ngModel)="this.dataApi.seleccionarInmueble.nRecamaras">
+            </div>
+
+            <div class="form-group col-md-4">
+              <label for="nNiveles" >Número de Cajones de Estacionamiento</label>
+              <input type="number" class="form-control" name="ncojonesEstacionamiento" (ngModel)="this.dataApi.seleccionarInmueble.ncojonesEstacionamiento">
+            </div>
+
           </div>
+
+          <div class="form-row">
+            
+              <div class="form-group col-md-6">
+                <label for="nNiveles" >Número de Baños Completos</label>
+                <input type="number" class="form-control" name="nbanosCompletos" (ngModel)="this.dataApi.seleccionarInmueble.nbanosCompletos">
+              </div>
+  
+              <div class="form-group col-md-6">
+                <label for="nNiveles" >Número de Baños MEdios</label>
+                <input type="number" class="form-control" name="nbanosMedios" (ngModel)="this.dataApi.seleccionarInmueble.nbanosMedios">
+              </div>
+  
+          </div>
+
+<!--Campos para Descripción Contrucción-->
+          <br>
+          <h2>Descripción de Contrucción</h2>
+
+
+<!--Campos para Caracteristicas Terreno-->
+
+
+<!--Campos para Servicios Distancia-->
+
+
+<!--Campos para Uso Actual-->
+
+
+<!--Campos para Vías de Acceso-->
+
+          
 
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
