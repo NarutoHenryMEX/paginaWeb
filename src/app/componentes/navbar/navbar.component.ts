@@ -11,6 +11,7 @@ public activo: boolean;
 public nombreUsuario: string;
 public emailUsuario: string;
 public fotoUsuario: string;
+public by: string;
 
   constructor(
     public authService: AuthService
@@ -24,6 +25,7 @@ public fotoUsuario: string;
         this.nombreUsuario = auth.displayName; //Desplejar su nombre
         this.emailUsuario = auth.email; //y desplejar su correo
         this.fotoUsuario = auth.photoURL;
+        this.by = auth.displayName;
       } else { //Si no, entonces
         this.activo = false; //devolver un falso
       }

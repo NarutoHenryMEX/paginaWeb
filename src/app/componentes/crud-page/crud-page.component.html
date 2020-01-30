@@ -8,14 +8,16 @@
           <th scope="col">ID</th>
           <th scope="col">Zona</th>
           <th scope="col">Imagen</th>
+          <th scope="col">Modificado Por:</th>
           <th scope="col">&nbsp;</th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let inmueble of inmuebles" >
+        <tr *ngFor="let inmueble of inmuebles"  >
           <th scope="row">{{inmueble.idp}}</th>
           <td>{{inmueble.zona}}</td>
           <td ><img src="{{inmueble.portada}}" class="img-fluid"></td>
+          <td >{{inmueble.by}}</td>
           <td>
             <button type="button" (click)="borrarUnLibro(inmueble.id)" class="btn btn-primary">Borrar</button>
               
