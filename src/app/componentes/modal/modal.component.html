@@ -12,7 +12,7 @@
           <div class="form-row">
             <div class="form-group col-md-6">
               <label for="by">Modificado por</label>
-              <select class="form-control" name="by" (ngModel)="this.dataApi.seleccionarInmueble.by" > 
+              <select class="form-control is-valid" name="by" (ngModel)="this.dataApi.seleccionarInmueble.by" required> 
                 <option value="{{by}}">{{by}}</option>
               </select>
             </div>
@@ -86,6 +86,79 @@
             </div>
             
           </div>
+          
+<!--Campos para Uso Actual-->
+<br>
+<h2>Uso Actual</h2>
+<div class="form-row">
+
+  <div class="form-group col-md-3">
+    <label for="tipoInmueble">Tipo de Inmueble</label>
+    <input type="text" list="tipoInmueble" name="tipoInmueble" (ngModel)="this.dataApi.seleccionarInmueble.tipoInmueble" >
+    <datalist id="tipoInmueble" > 
+      <option value="Casa Unifamiliar">Casa Unifamiliar</option>
+      <option value="Casa de Condominio">Casa de Condominio</option>
+      <option value="Departamento">Departamento</option>
+    </datalist>
+  </div>
+
+  <div class="form-group col-md-2">
+    <label for="precioVenta">Precio de Venta</label>
+    <input type="number" class="form-control" name="precioVenta" (ngModel)="this.dataApi.seleccionarInmueble.precioVenta">
+  </div>
+  
+  <div class="form-group col-md-5">
+    <label for="informante">Informante</label>
+    <input type="text" class="form-control" name="informante" (ngModel)="this.dataApi.seleccionarInmueble.informante">
+  </div>
+
+  <div class="form-group col-md-2">
+    <label for="numeroTelefono">Número de Teléfono</label>
+    <input type="number" class="form-control" name="numeroTelefono" (ngModel)="this.dataApi.seleccionarInmueble.numeroTelefono">
+  </div>
+
+</div>
+
+<div class="form-row">
+
+  <div class="form-group col-md-3">
+    <label for="edadAproximada">Edad apróximada</label>
+    <input type="number" class="form-control" name="edadAproximada" (ngModel)="this.dataApi.seleccionarInmueble.edadAproximada">
+  </div>
+
+  <div class="form-group col-md-3">
+    <label for="nCallesFrente">Número de calles enfrente</label>
+    <input type="text" class="form-control" name="nCallesFrente" (ngModel)="this.dataApi.seleccionarInmueble.nCallesFrente">
+  </div>
+
+  <div class="form-group col-md-6">
+    <label for="linkInternet">Link de Internet</label>
+    <input type="text" class="form-control" name="linkInternet" (ngModel)="this.dataApi.seleccionarInmueble.linkInternet">
+  </div>
+
+</div>
+<br>
+<h5>Fotografias</h5>
+<br>
+<div class="form-row">
+ 
+  <div class="form-group col-md-3">
+    <input type="text" class="form-control" name="portada" placeholder="Fachada princial" (ngModel)="this.dataApi.seleccionarInmueble.portada">
+  </div>
+
+  <div class="form-group col-md-3">
+    <input type="text" class="form-control" name="frenteTerreno" placeholder="Frente del Terreno" (ngModel)="this.dataApi.seleccionarInmueble.frenteTerreno">
+  </div>
+
+  <div class="form-group col-md-3">
+    <input type="text" class="form-control" name="fondoTerreno" placeholder="Fondo del Terreno" (ngModel)="this.dataApi.seleccionarInmueble.fondoTerreno">
+  </div>
+
+  <div class="form-group col-md-3">
+    <input type="text" class="form-control" name="superficieTerreno" placeholder="Superficie del Terreno" (ngModel)="this.dataApi.seleccionarInmueble.superficieTerreno">
+  </div>
+
+</div>
 
 <!--Campos para Descripción Inmuebles-->
           <br>
@@ -98,12 +171,12 @@
             </div>
 
             <div class="form-group col-md-4">
-              <label for="nNiveles" >Número de Recamaras</label>
+              <label for="nRecamaras" >Número de Recamaras</label>
               <input type="number" class="form-control" name="nRecamaras" (ngModel)="this.dataApi.seleccionarInmueble.nRecamaras">
             </div>
 
             <div class="form-group col-md-4">
-              <label for="nNiveles" >Número de Cajones de Estacionamiento</label>
+              <label for="ncojonesEstacionamiento" >Número de Cajones de Estacionamiento</label>
               <input type="number" class="form-control" name="ncojonesEstacionamiento" (ngModel)="this.dataApi.seleccionarInmueble.ncojonesEstacionamiento">
             </div>
 
@@ -112,12 +185,12 @@
           <div class="form-row">
             
               <div class="form-group col-md-6">
-                <label for="nNiveles" >Número de Baños Completos</label>
+                <label for="nbanosCompletos" >Número de Baños Completos</label>
                 <input type="number" class="form-control" name="nbanosCompletos" (ngModel)="this.dataApi.seleccionarInmueble.nbanosCompletos">
               </div>
   
               <div class="form-group col-md-6">
-                <label for="nNiveles" >Número de Baños MEdios</label>
+                <label for="nbanosMedios" >Número de Baños MEdios</label>
                 <input type="number" class="form-control" name="nbanosMedios" (ngModel)="this.dataApi.seleccionarInmueble.nbanosMedios">
               </div>
   
@@ -126,20 +199,345 @@
 <!--Campos para Descripción Contrucción-->
           <br>
           <h2>Descripción de Contrucción</h2>
+          <div class="form-row">
 
+            <div class="form-group col-md-4">
+              <label for="tipoPiso">Tipo de Piso</label>
+              <input type="text" class="form-control" name="tipoPiso" (ngModel)="this.dataApi.seleccionarInmueble.tipoPiso">
+            </div>
 
+            <div class="form-group col-md-4">
+              <label for="tipoLoseta">Tipo de loseta</label>
+              <input type="text" class="form-control" name="tipoLoseta" (ngModel)="this.dataApi.seleccionarInmueble.tipoLoseta">
+            </div>
+
+            <div class="form-group col-md-2">
+              <label for="cocinaIntegral">Cocina Integral</label>
+              <select class="form-control" name="cocinaIntegral" (ngModel)="this.dataApi.seleccionarInmueble.cocinaIntegral" > 
+                <option value="SI">Si</option>
+                <option value="NO">No</option>
+              </select>
+            </div>
+
+            <div class="form-group col-md-2">
+              <label for="aguaPotable">Agua Potable</label>
+              <select class="form-control" name="aguaPotable" (ngModel)="this.dataApi.seleccionarInmueble.aguaPotable" > 
+                <option value="SI">Si</option>
+                <option value="NO">No</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+
+            <div class="form-group col-md-2">
+              <label for="drenaje">Drenaje</label>
+              <select class="form-control" name="drenaje" (ngModel)="this.dataApi.seleccionarInmueble.drenaje" > 
+                <option value="SI">Si</option>
+                <option value="NO">No</option>
+              </select>
+            </div>
+
+            <div class="form-group col-md-2">
+              <label for="alumbradoPublico">Alumbrado Público</label>
+              <select class="form-control" name="alumbradoPublico" (ngModel)="this.dataApi.seleccionarInmueble.alumbradoPublico" > 
+                <option value="SI">Si</option>
+                <option value="NO">No</option>
+              </select>
+            </div>
+
+            <div class="form-group col-md-2">
+              <label for="lineaPublica">Linea Telefónica</label>
+              <select class="form-control" name="lineaPublica" (ngModel)="this.dataApi.seleccionarInmueble.lineaPublica" > 
+                <option value="SI">Si</option>
+                <option value="NO">No</option>
+              </select>
+            </div>
+
+            <div class="form-group col-md-2">
+              <label for="senalizacion">Señalización</label>
+              <select class="form-control" name="senalizacion" (ngModel)="this.dataApi.seleccionarInmueble.senalizacion" > 
+                <option value="SI">Si</option>
+                <option value="NO">No</option>
+              </select>
+            </div>
+            
+            <div class="form-group col-md-2">
+              <label for="transportePublico">Transporte Público</label>
+              <select class="form-control" name="transportePublico" (ngModel)="this.dataApi.seleccionarInmueble.transportePublico" > 
+                <option value="SI">Si</option>
+                <option value="NO">No</option>
+              </select>
+            </div>
+
+            <div class="form-group col-md-2">
+              <label for="tipoVigilancia">Tipo De Vigilancia</label>
+              <select class="form-control" name="tipoVigilancia" (ngModel)="this.dataApi.seleccionarInmueble.tipoVigilancia" > 
+                <option value="Pública">Pública</option>
+                <option value="Privada">Privada</option>
+              </select>
+            </div>
+
+          </div>
+
+          <div class="form-row">
+
+            <div class="form-group col-md-2">
+              <label for="jardin">Jardín</label>
+              <select class="form-control" name="jardin" (ngModel)="this.dataApi.seleccionarInmueble.jardin" > 
+                <option value="SI">Si</option>
+                <option value="NO">No</option>
+              </select>
+            </div>
+
+            <div class="form-group col-md-2">
+              <label for="estructura">Estructura</label>
+              <select class="form-control" name="estructura" (ngModel)="this.dataApi.seleccionarInmueble.estructura" > 
+                <option value="SI">Si</option>
+                <option value="NO">No</option>
+              </select>
+            </div>
+
+            <div class="form-group col-md-3">
+              <label for="insHSanitario">Instalación Hidraulico Sanitario</label>
+              <select class="form-control" name="insHSanitario" (ngModel)="this.dataApi.seleccionarInmueble.insHSanitario" > 
+                <option value="SI">Si</option>
+                <option value="NO">No</option>
+              </select>
+            </div>
+
+            <div class="form-group col-md-2">
+              <label for="carpinteria">Carpinteria</label>
+              <select class="form-control" name="Carpinteria" (ngModel)="this.dataApi.seleccionarInmueble.Carpinteria" > 
+                <option value="SI">Si</option>
+                <option value="NO">No</option>
+              </select>
+            </div>
+
+            <div class="form-group col-md-3">
+              <label for="closetCarpinteria">Closets de Carpinteria</label>
+              <select class="form-control" name="closetCarpinteria" (ngModel)="this.dataApi.seleccionarInmueble.closetCarpinteria" > 
+                <option value="SI">Si</option>
+                <option value="NO">No</option>
+              </select>
+            </div>
+
+          </div>
+
+          <div class="form-row">
+            
+            <div class="form-group col-md-4">
+              <label for="tipoPuertas">Tipo de puertas</label>
+              <br>
+              <input type="text" list="tipoPuertas" name="tipoPuertas" (ngModel)="this.dataApi.seleccionarInmueble.tipoPuertas" >
+              <datalist id="tipoPuertas"> 
+                <option value="Puertas de Madera">Puertas de Madera</option>
+                <option value="Puertas Métalicas">Puertas Métalicas</option>
+                <option value="Puertas de Aluminio">Puertas de Aluminio</option>
+              </datalist>
+            </div>
+
+            <div class="form-group col-md-4">
+              <label for="tipoCanceleria">Tipo de canceleria</label>
+              <br>
+              <input type="text" list="tipoCanceleria" name="tipoCanceleria" (ngModel)="this.dataApi.seleccionarInmueble.tipoCanceleria">
+              <datalist id="tipoCanceleria"> 
+                <option value="Canceleria de Aluminio">Canceleria de Aluminio</option>
+                <option value="Canceleria de Fierro">Canceleria de Fierro</option>
+              </datalist>
+            </div>
+
+            <div class="form-group col-md-4">
+              <label for="herreria">Herreria</label>
+              <br>
+              <input type="text"  list="herreria" name="herreria" (ngModel)="this.dataApi.seleccionarInmueble.herreria" >
+              <datalist id="herreria"> 
+                <option value="Protección en Ventanas">Protección en Ventanas</option>
+                <option value="Protección en Puertas">Protección en Puertas</option>
+                <option value="Protección en Muros perimetrales">Protección en Muros perimetrales</option>
+              </datalist>
+            </div>
+
+          </div>
 <!--Campos para Caracteristicas Terreno-->
+          <br>
+          <h2>Características del Terreno</h2>
 
+          <div class="form-row">
 
-<!--Campos para Servicios Distancia-->
+            <div class="form-group col-md-4">
+              <label for="ClasZona">Clasificación de la Zona </label>
+              
+              <select class="form-control" name="ClasZona" (ngModel)="this.dataApi.seleccionarInmueble.ClasZona" > 
+                <option value="Habitacional">Habitacional</option>
+                <option value="Comercial">Comercial</option>
+                <option value="De uso Mixto">De uso Mixto</option>
+              </select>
+            </div>
 
+            <div class="form-group col-md-4">
+              <label for="tipoContruccionDominanteCalle">Tipo de Contrucción dominante en la calle </label>
+              <input type="text" list="tipoContruccionDominanteCalle" name="tipoContruccionDominanteCalle" (ngModel)="this.dataApi.seleccionarInmueble.tipoContruccionDominanteCalle" >
+              <datalist id="tipoContruccionDominanteCalle" > 
+                <option value="Habitacional">Habitacional</option>
+                <option value="Comercial">Comercial</option>
+                <option value="De uso Mixto">De uso Mixto</option>
+              </datalist>
+            </div>
 
-<!--Campos para Uso Actual-->
+            <div class="form-group col-md-4">
+              <label for="estadoConservacionInmueble">Estado de conservación del inmueble</label>
+              <select class="form-control" name="estadoConservacionInmueble" (ngModel)="this.dataApi.seleccionarInmueble.estadoConservacionInmueble" > 
+                <option value="Bueno">Bueno</option>
+                <option value="Malo">Malo</option>
+                <option value="Regular">Regular</option>
+              </select>
+            </div>
+          </div>
+        
 
+          <div class="form-row">
+
+            <div class="form-group col-md-4">
+              <label for="calidadProyecto">Calidad del Proyecto</label>
+              <select class="form-control" name="calidadProyecto" (ngModel)="this.dataApi.seleccionarInmueble.calidadProyecto" > 
+                <option value="Bueno">Bueno</option>
+                <option value="Malo">Malo</option>
+                <option value="Regular">Regular</option>
+              </select>
+            </div>
+
+            <div class="form-group col-md-4">
+              <label for="indiceSaturacionZona">Índice de saturación en la zona</label>
+              <select class="form-control" name="indiceSaturacionZona" (ngModel)="this.dataApi.seleccionarInmueble.indiceSaturacionZona" > 
+                <option value="Baja">Baja</option>
+                <option value="Media">Media</option>
+                <option value="Alta">Alta</option>
+              </select>
+            </div>
+
+            <div class="form-group col-md-4">
+              <label for="unidadesRentables">Unidades Rentables</label>
+              <select class="form-control" name="unidadesRentables" (ngModel)="this.dataApi.seleccionarInmueble.unidadesRentables" > 
+                <option value="Con número">Con número</option>
+               
+              </select>
+            </div>
+           
+          </div>
+
+          <div class="form-row">
+
+            <div class="form-group col-md-4">
+              <label for="densidadPoblacion">Densidad de población</label>
+              <select class="form-control" name="densidadPoblacion" (ngModel)="this.dataApi.seleccionarInmueble.densidadPoblacion" > 
+                <option value="Baja">Baja</option>
+                <option value="Media">Media</option>
+                <option value="Alta">Alta</option>
+              </select>
+            </div>
+
+            <div class="form-group col-md-4">
+              <label for="usoSueloPermitido">Uso del suelo permitido</label>
+              <select class="form-control" name="usoSueloPermitido" (ngModel)="this.dataApi.seleccionarInmueble.usoSueloPermitido" > 
+                <option value="Habitacional">Habitacional</option>
+                <option value="Comercial">Comercial</option>
+                <option value="Mixto">Mixto</option>
+              </select>
+            </div>
+
+            <div class="form-group col-md-4">
+              <label for="densidadPoblacion">Bote por intensidad habitacional</label>
+              <input type="text" class="form-control" name="densidadPoblacion" (ngModel)="this.dataApi.seleccionarInmueble.densidadPoblacion">
+            </div>
+
+          </div>
+          
 
 <!--Campos para Vías de Acceso-->
+          <br>
+          <h2>Vías de Acceso</h2>
+          <div class="form-row">
+
+            <div class="form-group col-md-3">
+              <label for="callePrincipal">Calle principal</label>
+              <input type="text" class="form-control" name="callePrincipal" (ngModel)="this.dataApi.seleccionarInmueble.callePrincipal">
+            </div>
+
+            <div class="form-group col-md-3">
+              <label for="calleSecundaria">Calle secundaria</label>
+              <input type="text" class="form-control" name="calleSecundaria" (ngModel)="this.dataApi.seleccionarInmueble.calleSecundaria">
+            </div>
+
+            <div class="form-group col-md-3">
+              <label for="callePrivada">Calle en privada</label>
+              <input type="text" class="form-control" name="callePrivada" (ngModel)="this.dataApi.seleccionarInmueble.callePrivada">
+            </div>
+
+             <div class="form-group col-md-3">
+              <label for="serviciosPublicos">Servicios Públicos </label>
+              <input type="text" list="serviciosPublicos" name="serviciosPublicos" (ngModel)="this.dataApi.seleccionarInmueble.serviciosPublicos" >
+              <datalist id="serviciosPublicos" > 
+                <option value="Agua">Agua</option>
+                <option value="Luz">Luz</option>
+                <option value="Drenaje">Drenaje</option>
+                <option value="Alcantarillado">Alcantarillado</option>
+              </datalist>
+            </div>
+
+          </div>
 
           
+<!--Campos para Servicios Distancia-->
+          <br>
+          <h2>Servicios y Distancia</h2>
+
+        <div class="form-row">
+
+          <div class="form-group col-md-4">
+            <label for="serSalud1er">Servicios de Salud de 1er Nivel</label>
+            <select class="form-control" name="serSalud1er" (ngModel)="this.dataApi.seleccionarInmueble.serSalud1er" > 
+              <option value="Si">Si</option>
+              <option value="No">No</option>
+            </select>
+          </div>
+
+          <div class="form-group col-md-4">
+            <label for="serSalud2do">Servicios de Salud de 2do Nivel</label>
+            <select class="form-control" name="serSalud2do" (ngModel)="this.dataApi.seleccionarInmueble.serSalud2do" > 
+              <option value="Si">Si</option>
+              <option value="No">No</option>
+            </select>
+          </div>
+
+          <div class="form-group col-md-4">
+            <label for="serSalud3er">Servicios de Salud de 3er Nivel</label>
+            <select class="form-control" name="serSalud3er" (ngModel)="this.dataApi.seleccionarInmueble.serSalud3er" > 
+              <option value="Si">Si</option>
+              <option value="No">No</option>
+            </select>
+          </div>
+          
+        </div>
+
+        <div class="form-row">
+
+          <div class="form-group col-md-4">
+            <label for="distanciaIglesia">Distancia a Iglesia</label>
+            <input type="text" class="form-control" name="distanciaIglesia" (ngModel)="this.dataApi.seleccionarInmueble.distanciaIglesia">
+          </div>
+
+          <div class="form-group col-md-4">
+            <label for="distanciaMercado">Distancia a Mercado</label>
+            <input type="text" class="form-control" name="distanciaMercado" (ngModel)="this.dataApi.seleccionarInmueble.distanciaMercado">
+          </div>
+
+          <div class="form-group col-md-4">
+            <label for="distanciaSuperMercado">Distancia a Super Mercado</label>
+            <input type="text" class="form-control" name="distanciaSuperMercado" (ngModel)="this.dataApi.seleccionarInmueble.distanciaSuperMercado">
+          </div>
+
+        </div>
 
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>

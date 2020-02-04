@@ -5,5 +5,4 @@ zona?: string;
 imagen1?: string;
 by?: string;
 
-calle?: string;
 }
