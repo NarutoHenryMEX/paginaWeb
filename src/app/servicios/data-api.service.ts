@@ -19,14 +19,16 @@ export class DataApiService {
   private inmuebles: Observable<inmueblesInterface[]>;
   private inmuebleDoc: AngularFirestoreDocument<inmueblesInterface>;
   private inmueble: Observable<inmueblesInterface>;
-  public seleccionarInmueble: inmueblesInterface[];
+  public seleccionarInmueble: inmueblesInterface = {
+    id: null
+  };
 
   //Metodos principales del CRUD
 
   createInmueble(inmueble: inmueblesInterface): void {
     this.listadoInmuebles.add(inmueble);
     }
-
+ 
    //Metodo para traer TODOS los inmuebles
   readAllInmuebles(){
     return this.inmuebles = this.listadoInmuebles.snapshotChanges()

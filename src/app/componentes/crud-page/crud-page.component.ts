@@ -36,13 +36,16 @@ export class CrudPageComponent implements OnInit {
     });
   }
 
-  borrarUnLibro(idInmueble: string){
+  borrarUnInmueble(idInmueble: string){
     const confirmacion = confirm("Seguro que desea eliminar este registro");
     if(confirmacion){
       this.dataApi.deleteInmueble(idInmueble);
     }
+  }
 
-    
+  modificarUnInmueble(inmueble: inmueblesInterface){
+    console.log(inmueble);
+    this.dataApi.seleccionarInmueble = Object.assign({}, inmueble);
   }
 
   }

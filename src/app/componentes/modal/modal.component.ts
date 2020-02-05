@@ -25,12 +25,13 @@ export class ModalComponent implements OnInit {
       }
     });
   }
-
+ 
   guardarInmueble(inmuebleForm: NgForm):void{
     //Guardar
     this.dataApi.createInmueble(inmuebleForm.value);
 
     //Modificar
+
   }
 
 }

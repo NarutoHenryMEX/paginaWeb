@@ -12,7 +12,7 @@
           <div class="form-row">
             <div class="form-group col-md-6">
               <label for="by">Modificado por</label>
-              <select class="form-control is-valid" name="by" (ngModel)="this.dataApi.seleccionarInmueble.by" required> 
+              <select class="form-control" name="by" (ngModel)="this.dataApi.seleccionarInmueble.by" required> 
                 <option value="{{by}}">{{by}}</option>
               </select>
             </div>
@@ -24,10 +24,10 @@
           <br>
           <h2>Ubicación</h2>
           <div class="form-row">
-
+ 
             <div class="form-group col-md-3">
               <label for="idp">ID</label>
-              <input type="text" class="form-control" name="idp" (ngModel)="this.dataApi.seleccionarInmueble.idp">
+              <input type="text" class="form-control" name="id" (ngModel)="this.dataApi.seleccionarInmueble.id">
             </div>
   
               <div class="form-group col-md-3">

@@ -8,6 +8,7 @@ import { NavbarComponent } from './componentes/navbar/navbar.component';
 import { LoginPageComponent } from './componentes/login-page/login-page.component';
 import { CrudPageComponent } from './componentes/crud-page/crud-page.component';
 import { NoFoundPageComponent } from './componentes/no-found-page/no-found-page.component';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 import { AngularFireModule} from 'angularfire2';
 import { AngularFireAuthModule} from 'angularfire2/auth';
@@ -29,6 +30,7 @@ import { DetallesIdPageComponent } from './componentes/detalles-id-page/detalles
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
 import { ModalComponent } from './componentes/modal/modal.component';
+import { FooterComponent } from './componentes/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +43,8 @@ import { ModalComponent } from './componentes/modal/modal.component';
     DetallesPageComponent,
     OfertaPageComponent,
     DetallesIdPageComponent,
-    ModalComponent
+    ModalComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -52,7 +55,8 @@ import { ModalComponent } from './componentes/modal/modal.component';
     AngularFireModule.initializeApp(environment.firebaseConfing),
     FlashMessagesModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    AngularFontAwesomeModule
   ],
   providers: [AuthService, AuthGuard, FlashMessagesService, AngularFirestore],
   bootstrap: [AppComponent]
