@@ -4,6 +4,7 @@
     
     <table class="table table-hover">
       <thead>
+
         <tr>
           <th style="width: 150px" scope="col">Acciones</th>
           <th style="width: 80px" scope="col">ID</th>
@@ -44,7 +45,7 @@
           <th style="width: 100px" scope="col">Drenaje</th>
           <th style="width: 100px" scope="col">Alumbrado Público</th>
           <th style="width: 100px" scope="col">Linea Telefónica</th>
-          <th style="width: 100px" scope="col">Señalización</th>
+          <th style="width: 110px" scope="col">Señalización</th>
           <th style="width: 100px" scope="col">Transporte Público</th>
           <th style="width: 100px" scope="col">Tipo de Vigilacia</th>
           <th style="width: 100px" scope="col">Jardín</th>
@@ -57,13 +58,27 @@
           <th style="width: 100px" scope="col">Herrería</th>
           <th style="width: 100px" scope="col">Clasificación de la Zona</th>
           <th style="width: 100px" scope="col">Tipo de Contrucción</th>
-          <th style="width: 100px" scope="col">Estado de Conservación</th>
+          <th style="width: 110px" scope="col">Estado de Conservación</th>
           <th style="width: 100px" scope="col">Calidad del Proyecto</th>
           <th style="width: 100px" scope="col">ISZ</th>
           <th style="width: 100px" scope="col">Unidades Rentables</th>
           <th style="width: 100px" scope="col">Densidad de Población</th>
           <th style="width: 100px" scope="col">Uso del Suelo permitido</th>
-          <th style="width: 100px" scope="col">Lote por intensidad Habitacional</th>
+          <th style="width: 110px" scope="col">Lote por intensidad Habitacional</th>
+          <th style="width: 100px" scope="col">Calle Principal</th>
+          <th style="width: 100px" scope="col">Calle Secundaria</th>
+          <th style="width: 100px" scope="col">Calle en Privada</th>
+          <th style="width: 100px" scope="col">Agua</th>
+          <th style="width: 100px" scope="col">Luz</th>
+          <th style="width: 100px" scope="col">Drenaje</th>
+          <th style="width: 115px" scope="col">Alcantarillado</th>
+          <th style="width: 100px" scope="col">1er Nivel</th>
+          <th style="width: 100px" scope="col">2do Nivel</th>
+          <th style="width: 100px" scope="col">3er Nivel</th>
+          <th style="width: 100px" scope="col">Iglesia</th>
+          <th style="width: 100px" scope="col">Mercado</th>
+          <th style="width: 115px" scope="col">SuperMercado</th>
+
 
         </tr>
       </thead>
@@ -83,7 +98,7 @@
             </div>
           </th>
 
-          <th >{{inmueble.idp}}</th>
+          <td >{{inmueble.idp}}</td>
           <td>{{inmueble.zona}}</td>
           <td><img src="{{inmueble.portada}}" class="img-fluid"></td>
           <td>{{inmueble.by}}</td>
@@ -91,17 +106,17 @@
           <td>{{inmueble.municipio}}</td>
           <td>{{inmueble.fraccionamiento}}</td>
           <td>{{inmueble.calle}}</td>
-          <td>{{inmueble.nExterior}}</td>
-          <td>{{inmueble.nInterior}}</td>
+          <td>#{{inmueble.nExterior}}</td>
+          <td>#{{inmueble.nInterior}}</td>
           <td>{{inmueble.codigoPostal}} </td>
           <td>{{inmueble.entreCalle1}}</td>
           <td>{{inmueble.entreCalle2}}</td>
           <td>{{inmueble.referencia}}</td>
           <td>{{inmueble.tipoInmueble}}</td>
-          <td>{{inmueble.precioVenta}}</td>
+          <td>${{inmueble.precioVenta}}</td>
           <td>{{inmueble.informante}}</td>
           <td>{{inmueble.numeroTelefono}}</td>
-          <td>{{inmueble.edadAproximada}}</td>
+          <td>{{inmueble.edadAproximada}} Años</td>
           <td>{{inmueble.nFrente}}</td>
           <td> <a href="{{inmueble.linkInternet}}">De clic para Abrir</a> </td>
           <td><img src="{{inmueble.fachadaPrincipal}}" class="img-fluid"></td>
@@ -113,6 +128,49 @@
           <td>{{inmueble.ncojonesEstacionamiento}}</td>
           <td>{{inmueble.nbanosCompletos}}</td>
           <td>{{inmueble.nbanosMedios}}</td>
+          <td>{{inmueble.tipoPiso}}</td>
+          <td>{{inmueble.tipoLoseta}}</td>
+          <td>{{inmueble.instalacionElectrica}}</td>
+          <td>{{inmueble.cocinaIntegral}}</td>
+          <td>{{inmueble.aguaPotable}}</td>
+          <td>{{inmueble.drenaje}}</td>
+          <td>{{inmueble.alumbradoPublico}}</td>
+          <td>{{inmueble.lineaPublica}}</td>
+          <td>{{inmueble.senalizacion}}</td>
+          <td>{{inmueble.transportePublico}}</td>
+          <td>{{inmueble.tipoVigilancia}}</td>
+          <td>{{inmueble.jardin}}</td>
+          <td>{{inmueble.estructura}}</td>
+          <td>{{inmueble.insHSanitario}}</td>
+          <td>{{inmueble.Carpinteria}}</td>
+          <td>{{inmueble.closetCarpinteria}}</td>
+          <td>{{inmueble.tipoPuertas}}</td>
+          <td>{{inmueble.tipoCanceleria}}</td>
+          <td>{{inmueble.herreria}}</td>
+          <td>{{inmueble.ClasZona}}</td>
+          <td>{{inmueble.tipoContruccionDominanteCalle}}</td>
+          <td>{{inmueble.estadoConservacionInmueble}}</td>
+          <td>{{inmueble.calidadProyecto}}</td>
+          <td>{{inmueble.indiceSaturacionZona}}</td>
+          <td>{{inmueble.unidadesRentables}}</td>
+          <td>{{inmueble.densidadPoblacion}}</td>
+          <td>{{inmueble.usoSueloPermitido}}</td>
+          <td>{{inmueble.loteIntensidadHabitacional}}</td>
+          <td>{{inmueble.callePrincipal}}</td>
+          <td>{{inmueble.calleSecundaria}}</td>
+          <td>{{inmueble.callePrivada}}</td>
+          <td>{{inmueble.agua}}</td>
+          <td>{{inmueble.luz}}</td>
+          <td>{{inmueble.drenaje}}</td>
+          <td>{{inmueble.alcantarillado}}</td>
+          <td>{{inmueble.ser1erNivel}}</td>
+          <td>{{inmueble.ser2doNivel}}</td>
+          <td>{{inmueble.ser3erNivel}}</td>
+          <td>{{inmueble.distanciaIglesia}}km</td>
+          <td>{{inmueble.distanciaMercado}}km</td>
+          <td>{{inmueble.distanciaSuperMercado}}km</td>
+
+
          
         </tr>
 
