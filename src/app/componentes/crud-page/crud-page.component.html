@@ -1,35 +1,121 @@
+<app-modal></app-modal>
 <section class="row mt-5">
-  <div class="col">
-    <app-modal></app-modal>
+  <div class="table-responsive">
+    
     <table class="table table-hover">
       <thead>
         <tr>
-          <th scope="col">ID</th>
-          <th scope="col">Zona</th>
-          <th scope="col">Imagen</th>
-          <th scope="col">Modificado Por:</th>
-          <th scope="col">&nbsp;</th>
+          <th style="width: 150px" scope="col">Acciones</th>
+          <th style="width: 80px" scope="col">ID</th>
+          <th style="width: 90px" scope="col">Zona</th>
+          <th style="width: 150px" scope="col">Imagen</th>
+          <th style="width: 200px" scope="col">Modificado Por:</th>
+          <th style="width: 150px" scope="col">Estado</th>
+          <th style="width: 150px" scope="col">Municipio</th>
+          <th style="width: 150px" scope="col">Fraccionamiento</th>
+          <th style="width: 150px" scope="col">Calle</th>
+          <th style="width: 100px" scope="col">N° Exterior</th>
+          <th style="width: 100px" scope="col">N° Interior</th>
+          <th style="width: 100px" scope="col">Código Postal</th>
+          <th style="width: 150px" scope="col">Entre Calle</th>
+          <th style="width: 150px" scope="col">Y Calle</th>
+          <th style="width: 150px" scope="col">Referencia</th>
+          <th style="width: 150px" scope="col">Tipo de Inmueble</th>
+          <th style="width: 150px" scope="col">Precio de Venta</th>
+          <th style="width: 150px" scope="col">Informante</th>
+          <th style="width: 150px" scope="col">Número Telefónico</th>
+          <th style="width: 100px" scope="col">Edad Aproximada</th>
+          <th style="width: 100px" scope="col">Número de Frentes</th>
+          <th style="width: 150px" scope="col">Link de Internet</th>
+          <th style="width: 150px" scope="col">Fachada Principal</th>
+          <th style="width: 150px" scope="col">Frente de Terreno</th>
+          <th style="width: 150px" scope="col">Fondo de Terreno</th>
+          <th style="width: 150px" scope="col">Superficie de Terreno</th>
+          <th style="width: 80px" scope="col">Niveles</th>
+          <th style="width: 100px" scope="col">Recámaras</th>
+          <th style="width: 100px" scope="col">Cajones de Estacionamiento</th>
+          <th style="width: 100px" scope="col">Baños Completos</th>
+          <th style="width: 100px" scope="col">Medio Baño</th>
+          <th style="width: 100px" scope="col">Tipo de Piso</th>
+          <th style="width: 100px" scope="col">Tipo de Loseta</th>
+          <th style="width: 100px" scope="col">Instalación Eléctrica</th>
+          <th style="width: 100px" scope="col">Cocina Integral</th>
+          <th style="width: 100px" scope="col">Agua Potable</th>
+          <th style="width: 100px" scope="col">Drenaje</th>
+          <th style="width: 100px" scope="col">Alumbrado Público</th>
+          <th style="width: 100px" scope="col">Linea Telefónica</th>
+          <th style="width: 100px" scope="col">Señalización</th>
+          <th style="width: 100px" scope="col">Transporte Público</th>
+          <th style="width: 100px" scope="col">Tipo de Vigilacia</th>
+          <th style="width: 100px" scope="col">Jardín</th>
+          <th style="width: 100px" scope="col">Estructura</th>
+          <th style="width: 100px" scope="col">Instalación Hidráulico Sanitario</th>
+          <th style="width: 100px" scope="col">Carpintería</th>
+          <th style="width: 100px" scope="col">Closets de Carpintería</th>
+          <th style="width: 100px" scope="col">Tipo de Puertas</th>
+          <th style="width: 100px" scope="col">Tipo de Cancelería</th>
+          <th style="width: 100px" scope="col">Herrería</th>
+          <th style="width: 100px" scope="col">Clasificación de la Zona</th>
+          <th style="width: 100px" scope="col">Tipo de Contrucción</th>
+          <th style="width: 100px" scope="col">Estado de Conservación</th>
+          <th style="width: 100px" scope="col">Calidad del Proyecto</th>
+          <th style="width: 100px" scope="col">ISZ</th>
+          <th style="width: 100px" scope="col">Unidades Rentables</th>
+          <th style="width: 100px" scope="col">Densidad de Población</th>
+          <th style="width: 100px" scope="col">Uso del Suelo permitido</th>
+          <th style="width: 100px" scope="col">Lote por intensidad Habitacional</th>
+
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let inmueble of inmuebles"  >
-          <th scope="row">{{inmueble.idp}}</th>
-          <td>{{inmueble.zona}}</td>
-          <td ><img src="{{inmueble.portada}}" class="img-fluid"></td>
-          <td >{{inmueble.by}}</td>
-          <td>
-            <button type="button" (click)="borrarUnInmueble(inmueble.id)" class="btn btn-primary">Borrar</button>
-              
-            
-              <a class="nav-link dropdown-toggle float-right" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Más opciones</a>
-              <div class="dropdown-menu" style="">
-                <a class="dropdown-item" href="#">Ver más detalles</a>
-                <a class="dropdown-item" data-toggle="modal" data-target="#modal1" (click)="modificarUnInmueble(inmueble)">Modificar</a>
-                <a class="dropdown-item" (click)="borrarUnInmueble(inmueble.id)">Eliminar</a>
+        <tr *ngFor="let inmueble of inmuebles">
+          <th scope="row">
+            <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+              <button type="button" class="btn btn-info">Opciones</button>
+              <div class="btn-group show" role="group">
+                <button id="btnGroupDrop3" type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"></button>
+                <div class="dropdown-menu" aria-labelledby="btnGroupDrop3" style="position: absolute; transform: translate3d(0px, 34px, 0px); top: 0px; left: 0px; will-change: transform;" x-placement="bottom-start">
+                  <a class="dropdown-item" (click)="borrarUnInmueble(inmueble.id)">Eliminar</a>
+                  <a class="dropdown-item" data-toggle="modal" data-target="#modal1" (click)="modificarUnInmueble(inmueble)">Modificar</a>
+                  <a class="dropdown-item" >Detalles</a>
+                </div>
               </div>
-            
-          </td>
+            </div>
+          </th>
+
+          <th >{{inmueble.idp}}</th>
+          <td>{{inmueble.zona}}</td>
+          <td><img src="{{inmueble.portada}}" class="img-fluid"></td>
+          <td>{{inmueble.by}}</td>
+          <td >{{inmueble.estado}}</td>
+          <td>{{inmueble.municipio}}</td>
+          <td>{{inmueble.fraccionamiento}}</td>
+          <td>{{inmueble.calle}}</td>
+          <td>{{inmueble.nExterior}}</td>
+          <td>{{inmueble.nInterior}}</td>
+          <td>{{inmueble.codigoPostal}} </td>
+          <td>{{inmueble.entreCalle1}}</td>
+          <td>{{inmueble.entreCalle2}}</td>
+          <td>{{inmueble.referencia}}</td>
+          <td>{{inmueble.tipoInmueble}}</td>
+          <td>{{inmueble.precioVenta}}</td>
+          <td>{{inmueble.informante}}</td>
+          <td>{{inmueble.numeroTelefono}}</td>
+          <td>{{inmueble.edadAproximada}}</td>
+          <td>{{inmueble.nFrente}}</td>
+          <td> <a href="{{inmueble.linkInternet}}">De clic para Abrir</a> </td>
+          <td><img src="{{inmueble.fachadaPrincipal}}" class="img-fluid"></td>
+          <td><img src="{{inmueble.frenteTerreno}}" class="img-fluid"></td>
+          <td><img src="{{inmueble.fondoTerreno}}" class="img-fluid"></td>
+          <td><img src="{{inmueble.superficieTerreno}}" class="img-fluid"></td>
+          <td>{{inmueble.nNiveles}}</td>
+          <td>{{inmueble.nRecamaras}}</td>
+          <td>{{inmueble.ncojonesEstacionamiento}}</td>
+          <td>{{inmueble.nbanosCompletos}}</td>
+          <td>{{inmueble.nbanosMedios}}</td>
+         
         </tr>
+
       </tbody>
     </table> 
   </div>

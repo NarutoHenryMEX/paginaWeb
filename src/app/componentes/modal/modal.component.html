@@ -1,7 +1,6 @@
-<button type="button" class="btn btn-primary float-right" data-backdrop="static" data-toggle="modal" data-target="#modal1">Agregar Nuevo</button>
 
-
-  
+<button type="button" class="btn btn-success float-right" data-backdrop="static" data-toggle="modal" data-target="#modal1">Agregar Nuevo</button>
+  <br>
   <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
@@ -54,7 +53,7 @@
           <div class="form-row">
             <div class="form-group col-md-6">
               <label for="estado">Estado</label>
-              <select class="form-control" name="estados" (ngModel)="this.dataApi.seleccionarInmueble.estado">            
+              <select class="form-control" name="estado" (ngModel)="this.dataApi.seleccionarInmueble.estado">            
                 <option value="Aguascalientes">Aguascalientes</option>                
                 <option value="Baja California">Baja California</option>                
                 <option value="Baja California Sur">Baja California Sur</option>                
@@ -128,17 +127,17 @@
           <div class="form-row">
 
             <div class="form-group col-md-3">
-              <label for="codigoPostal">Entre calle</label>
+              <label for="entreCalle1">Entre calle</label>
               <input type="text" class="form-control" name="entreCalle1"  (ngModel)="this.dataApi.seleccionarInmueble.entreCalle1"> 
             </div>
           
             <div class="form-group col-md-3">
-              <label for="codigoPostal">y calle</label>
+              <label for="entreCalle2">y calle</label>
               <input type="text" class="form-control" name="entreCalle2" (ngModel)="this.dataApi.seleccionarInmueble.entreCalle2">
             </div>
 
             <div class="form-group col-md-6 " >
-              <label for="codigoPostal">Referencia</label>
+              <label for="referencia">Referencia</label>
               <input type="text" class="form-control" name="referencia" (ngModel)="this.dataApi.seleccionarInmueble.referencia">
             </div>
             
@@ -179,7 +178,7 @@
 
   <div class="form-group col-md-3">
     <label for="edadAproximada">Edad apróximada</label>
-    <input type="number" class="form-control" name="edadAproximada" min="0" max="99"  (ngModel)="this.dataApi.seleccionarInmueble.edadAproximada">
+    <input type="number" class="form-control" name="edadAproximada" maxlength="2"  (ngModel)="this.dataApi.seleccionarInmueble.edadAproximada">
   </div>
 
   <div class="form-group col-md-3">
@@ -194,7 +193,7 @@
 
 </div>
 <br>
-<h5>Fotografias</h5>
+<h5>Fotografías</h5>
 <br>
 <div class="form-row">
  
@@ -250,7 +249,7 @@
               </div>
   
               <div class="form-group col-md-6">
-                <label for="nbanosMedios" >Número de Baños Medios</label>
+                <label for="nbanosMedios" >Número de Medio Baños</label>
                 <input type="number" class="form-control" name="nbanosMedios" (ngModel)="this.dataApi.seleccionarInmueble.nbanosMedios">
               </div>
   
@@ -379,7 +378,7 @@
             </div>
 
             <div class="form-group col-md-3">
-              <label for="insHSanitario">Instalación Hidraulico Sanitario</label>
+              <label for="insHSanitario">Instalación Hidráulico Sanitario</label>
               <select class="form-control" name="insHSanitario" (ngModel)="this.dataApi.seleccionarInmueble.insHSanitario" > 
                 <option value="SI">Si</option>
                 <option value="NO">No</option>
@@ -498,10 +497,7 @@
 
             <div class="form-group col-md-4">
               <label for="unidadesRentables">Unidades Rentables</label>
-              <select class="form-control" name="unidadesRentables" (ngModel)="this.dataApi.seleccionarInmueble.unidadesRentables" > 
-                <option value="Con número">Con número</option>
-               
-              </select>
+              <input type="number" class="form-control" name="unidadesRentables" (ngModel)="this.dataApi.seleccionarInmueble.unidadesRentables" >
             </div>
            
           </div>
@@ -527,7 +523,7 @@
             </div>
 
             <div class="form-group col-md-4">
-              <label for="densidadPoblacion">Bote por intensidad habitacional</label>
+              <label for="densidadPoblacion">Lote por intensidad habitacional</label>
               <input type="text" class="form-control" name="densidadPoblacion" (ngModel)="this.dataApi.seleccionarInmueble.densidadPoblacion">
             </div>
 
@@ -640,14 +636,11 @@
             <label for="distanciaSuperMercado">Distancia a Super Mercado</label>
             <input type="number" class="form-control" name="distanciaSuperMercado" placeholder="Kilómentros" (ngModel)="this.dataApi.seleccionarInmueble.distanciaSuperMercado">
           </div>
-
-          
         </div>
-
 
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-            <button type="submit" class="btn btn-primary">Guardar</button>
+            <button type="submit" class="btn btn-success">Guardar</button>
           </div>
 
         </form>
